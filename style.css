@@ -1,0 +1,128 @@
+:root {
+  --bg: linear-gradient(135deg, #667eea, #764ba2);
+  --card: rgba(255, 255, 255, 0.15);
+  --text: #fff;
+}
+
+body.dark {
+  --bg: linear-gradient(135deg, #0f172a, #1e293b);
+  --card: rgba(30, 41, 59, 0.5);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: var(--text);
+  transition: 0.4s;
+}
+
+/* Container */
+.container {
+  width: 380px;
+  padding: 25px;
+  border-radius: 25px;
+  backdrop-filter: blur(15px);
+  background: var(--card);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  animation: fadeIn 0.6s ease;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 22px;
+}
+
+/* Input */
+.input-group {
+  display: flex;
+  margin-top: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+button {
+  margin-left: 8px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.3);
+}
+
+/* Filter */
+.filters {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Task List */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+/* Task Item */
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  animation: slideUp 0.3s ease;
+}
+
+li span {
+  cursor: pointer;
+}
+
+/* Completed */
+li.completed span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Delete button */
+li button {
+  background: rgba(255, 0, 0, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.9);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+@keyframes slideUp {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
